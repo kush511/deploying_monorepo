@@ -1,4 +1,4 @@
-name: Deploy the backend
+name: Deploy the ws
 
 on:
   push:
@@ -22,6 +22,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: docker/Dockerfile.backend
+          file: docker/Dockerfile.ws
           push: true
-          tags: kush511/deploy-monorepo-backend:${{ github.sha }}
+          tags: kush511/deploy-monorepo-ws:${{ github.sha }}
