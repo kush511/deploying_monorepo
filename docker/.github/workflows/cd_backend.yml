@@ -17,7 +17,13 @@ jobs:
                 username: ${{secrets.DOCKERHUB_USERNAME}}
                 password: ${{secrets.DOCKERHUB_PASSWORD}}
                 
-            
+            - name: Build and push
+              uses: docker/build-push-action@v4
+              with: 
+                context: .
+                file: docker/Dockerfile.backend
+                push: true
+                tags: kush511/deploy-monorepo:${{ github.sha }}
 
 
 
