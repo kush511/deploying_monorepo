@@ -36,7 +36,7 @@ jobs:
             docker rm prod_backend || true
             docker run -d \
             --name prod_backend \
-            -e DATABASE_URL=${{secrets.DATABASE_URL}}
+            -e DATABASE_URL="${{secrets.DATABASE_URL}}" \
             -p 8080:8080 \
             kush511/deploy-monorepo-backend:${{github.sha}}
 
