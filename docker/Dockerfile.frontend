@@ -13,7 +13,7 @@ RUN bun run db:generate
 RUN ${DATABASE_URL} bun run build
 EXPOSE 8080
 
-CMD [ "run","bun","start:web" ]
+CMD [ "bun","run","start:web" ]
 
 
 
